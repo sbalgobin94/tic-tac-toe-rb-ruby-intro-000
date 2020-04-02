@@ -47,7 +47,11 @@ def position_taken?(board, index)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index) == true
+<<<<<<< HEAD
     move(board, index, value = current_player(board))
+=======
+    move(board, index, "X")
+>>>>>>> 1be9556dc4e9f356fdcfdb9a4c315606443a9d97
     display_board(board)
   else
     turn(board)
@@ -128,6 +132,7 @@ def winner(board)
 end
 
 def play(board)
+<<<<<<< HEAD
   until over?(board)
     current_player(board)
     turn(board)
@@ -140,3 +145,19 @@ def play(board)
     puts "Congratulations #{winner}!"
   end
 end
+=======
+  turn(board)
+  until over?(board)
+    turn(board)
+  end
+  if draw?(board)
+      puts "Cat's Game!"
+  end
+  if won?(board)
+    winner = winner(board)
+    puts "Congratulations, #{winner}!"
+  end
+end
+
+board = ["X", "O", "X", "O", "O", "X", "O", "X", "O"]
+>>>>>>> 1be9556dc4e9f356fdcfdb9a4c315606443a9d97
